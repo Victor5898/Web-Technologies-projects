@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+<section id="mu-our-teacher">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-our-teacher-area">
+                    <!-- begain title -->
+                    <div class="mu-title">
+                        <h2>Profesorii nostri</h2>
+                        <p>Aceasta sectiune prezinta cativa dintre profesorii nostri</p>
+                    </div>
+                    <!-- end title -->
+                    <!-- begain our teacher content -->
+                    <div class="mu-our-teacher-content">
+                        <div class="row">
+                            @{
+                                var tObj = Model.TeacherObj;
+
+                                foreach (var to in tObj)
+                                {
+                                    <div class="col-lg-3 col-md-3  col-sm-6">
+                                        <div class="mu-our-teacher-single">
+                                            <figure class="mu-our-teacher-img">
+                                                <img src="@to.Teacher_img" alt="teacher img">
+                                                <div class="mu-our-teacher-social">
+                                                    <a href="#"><span class="fa fa-facebook"></span></a>
+                                                    <a href="#"><span class="fa fa-twitter"></span></a>
+                                                    <a href="#"><span class="fa fa-linkedin"></span></a>
+                                                    <a href="#"><span class="fa fa-google-plus"></span></a>
+                                                </div>
+                                            </figure>
+                                            <div class="mu-ourteacher-single-content">
+                                                <h4>@to.Teacher_Name</h4>
+                                                <span>@to.Teacher_Job</span>
+                                                <p>@to.Teacher_Descript</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+                        </div>
+                    </div>
+                    <!-- End our teacher content -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

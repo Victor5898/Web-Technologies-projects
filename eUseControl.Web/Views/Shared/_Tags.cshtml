@@ -1,0 +1,18 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model eUseControl.Web.Models.userData
+
+<div class="mu-single-sidebar">
+    <h3>Tags Cloud</h3>
+    <div class="tag-cloud">
+        @{
+            foreach (var to in Model.TagObj)
+            {
+                <a href="#">@to</a>
+            }
+        }
+    </div>
+</div>

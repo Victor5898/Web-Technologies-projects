@@ -1,0 +1,176 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Index";
+} 
+
+@model eUseControl.Web.Models.userData
+
+<div class="container mt-5">
+    <div class="row tm-content-row">
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
+            <div class="tm-bg-primary-dark tm-block tm-block-products">
+                <div class="tm-product-table-container">
+                    <table class="table table-hover tm-table-small tm-product-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">&nbsp;</th>
+                                <th scope="col">PRODUCT ID</th>
+                                <th scope="col">PRODUCT NAME</th>
+                                <th scope="col">ADD DATE</th>
+                                <th scope="col">DURATION</th>
+                                <th scope="col">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var course = Model.CourseObj;
+                                if (course != null)
+                                {
+                                    foreach (var co in course)
+                                    {
+                                        <tr>
+                                            <th scope="row"><input type="checkbox" /></th>
+                                            <td class="tm-product-name">@co.Id</td>
+                                            <td>@co.ProdName</td>
+                                            <td>@co.DaysAfter</td>
+                                            <td>@co.Duration</td>
+                                            <td>
+                                                <a href="#" class="tm-product-delete-link">
+                                                    <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td>Nu a fost gasit nici un curs! </td>
+                                    </tr>
+                                }
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- table container -->
+                @using (Html.BeginForm("AddProduct", "Admin", FormMethod.Get))
+                {
+                    <button type="submit" name="add"
+                            class="btn btn-primary btn-block text-uppercase mb-3">
+                        Adauga un curs nou
+                    </button>
+                }
+                    <button type="submit" name=" delete" class="btn btn-primary btn-block text-uppercase">
+                        Sterge cursurile selectate
+                    </button>
+                
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-block-col">
+            <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
+                <h2 class="tm-block-title">Product Categories</h2>
+                <div class="tm-product-table-container">
+                    <table class="table tm-table-small tm-product-table">
+                        <tbody>
+                            <tr>
+                                <td class="tm-product-name">Product Category 1</td>
+                                <td class="text-center">
+                                    <a href="#" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tm-product-name">Product Category 2</td>
+                                <td class="text-center">
+                                    <a href="#" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tm-product-name">Product Category 3</td>
+                                <td class="text-center">
+                                    <a href="#" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tm-product-name">Product Category 4</td>
+                                <td class="text-center">
+                                    <a href="#" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tm-product-name">Product Category 5</td>
+                                <td class="text-center">
+                                    <a href="#" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tm-product-name">Product Category 6</td>
+                                <td class="text-center">
+                                    <a href="#" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tm-product-name">Product Category 7</td>
+                                <td class="text-center">
+                                    <a href="#" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tm-product-name">Product Category 8</td>
+                                <td class="text-center">
+                                    <a href="#" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tm-product-name">Product Category 9</td>
+                                <td class="text-center">
+                                    <a href="#" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tm-product-name">Product Category 10</td>
+                                <td class="text-center">
+                                    <a href="#" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tm-product-name">Product Category 11</td>
+                                <td class="text-center">
+                                    <a href="#" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- table container -->
+                <button class="btn btn-primary btn-block text-uppercase mb-3">
+                    Add new category
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,37 @@
+﻿@model eUseControl.Web.Models.userData
+
+@{
+    Layout = null;
+}
+
+<div class="mu-course-container">
+    <div class="row">
+        @using (Html.BeginForm("Course", "Product", FormMethod.Post, new { autocomplete = "off" }))
+        {
+            var course = Model.CourseObj;
+
+            foreach (var co in course)
+            {
+                <div class="col-md-6 col-sm-6">
+                    <div class="mu-latest-course-single">
+                        <figure class="mu-latest-course-img">
+                            <a href="#"><img src="@co.ProdImg" alt="img"></a>
+                            <figcaption class="mu-latest-course-imgcaption">
+                                <a href="#">@co.ProdName</a>
+                                <span><i class="fa fa-clock-o"></i>@co.DaysAfter</span>
+                            </figcaption>
+                        </figure>
+                        <div class="mu-latest-course-single-content">
+                            <h4><a href="#">Pentru a accesa cursul, apasati aici</a></h4>
+                            <p>@co.ProdDescription</p>
+                            <div class="mu-latest-course-single-contbottom">
+                                <button type="submit" class="btn btn-outline-primary" name="btn" value="@co.Id">Detalii</button>
+                                <span class="mu-course-price" href="#">$@co.ProdPrice</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

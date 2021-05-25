@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+@model eUseControl.Web.Models.userData
+
+<h3>Popular News</h3>
+<div class="mu-sidebar-popular-courses">
+    @{
+        var newo = Model.NewsObj;
+
+        foreach (var no in newo)
+        {
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object" src="@no.News_Img" alt="img">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading"><a href="#">@no.News_Title</a></h4>
+                    <span class="popular-course-price">$@no.News_Price</span>
+                </div>
+            </div>
+        }
+    }
+</div>

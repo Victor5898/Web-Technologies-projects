@@ -1,0 +1,14 @@
+﻿
+@model eUseControl.Web.Models.userData
+
+<div class="mu-single-sidebar">
+    <h3>Categories</h3>
+    <ul class="mu-sidebar-catg">
+        @{
+            foreach (var c in Model.CategoryObj)
+            {
+                <li><a href="#">@c</a></li>
+            }
+        }
+    </ul>
+</div>

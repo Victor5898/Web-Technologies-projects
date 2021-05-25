@@ -1,0 +1,74 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>I++ courses | @ViewBag.Title </title>
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,700' rel='stylesheet' type='text/css'>
+
+    @Styles.Render("~/bundles/font-awesome/css")
+    @Styles.Render("~/bundles/bootstrap/css")
+    @Styles.Render("~/bundles/slick/css")
+    @Styles.Render("~/bundles/fancybox/css")
+    @Styles.Render("~/bundles/theme-color/css")
+
+    @if(IsSectionDefined("Styles"))
+    {
+        @RenderSection("Styles", required: false)
+    }
+
+    @Styles.Render("~/bundles/style/css")
+
+</head>
+
+<body>
+    <div class="wrapped">
+        <!-- scroll top button -->
+        <a class="scrollToTop" href="#">
+            <i class="fa fa-angle-up"></i>
+        </a>
+
+        <!--header-->
+        <header id="mu-header">
+            @Html.Partial("_Header")
+        </header>
+
+        <!--Navigation bar-->
+        <section id="mu-menu">
+            @Html.Partial("_Navigation")
+        </section>
+
+        <!--Search box-->
+        <div id="mu-search">
+            @Html.Partial("_Search")
+        </div>
+
+        <!--Main view-->
+        <section class=" content ">
+            @RenderBody()
+
+            @Html.Partial("_Footer")
+        </section>
+
+        @Scripts.Render("~/bundles/bootstrap/js")
+        @Scripts.Render("~/bundles/jquery/js")
+        @Scripts.Render("~/bundles/slick/js")
+        @Scripts.Render("~/bundles/fancybox/js")
+        @Scripts.Render("~/bundles/waypoint/js")
+        @Scripts.Render("~/bundles/counterup/js")
+        @Scripts.Render("~/bundles/mixitup/js")
+
+        @Scripts.Render("~/bundles/custom/js")
+
+        @RenderSection("scripts", required: false)
+    </div>
+
+
+</body>
+
+</html>

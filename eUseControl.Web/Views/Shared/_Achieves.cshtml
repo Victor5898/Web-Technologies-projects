@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model eUseControl.Web.Models.userData
+
+<div class="mu-single-sidebar">
+    <h3>Archives</h3>
+    <ul class="mu-sidebar-catg mu-sidebar-archives">
+        @{
+            var achieve = Model.AchieveObj;
+
+            foreach (var ao in achieve)
+            {
+                <li><a href="#">@ao.Achieve_Month <span>(@ao.Achieve_Number)</span></a></li>
+            }
+        }
+    </ul>
+</div>

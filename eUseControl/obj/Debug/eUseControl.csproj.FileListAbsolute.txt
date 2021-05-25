@@ -1,0 +1,2 @@
+C:\Users\Victor\source\repos\eUseControl\eUseControl\obj\Debug\eUseControl.csprojAssemblyReference.cache
+C:\Users\Victor\source\repos\eUseControl\eUseControl\obj\Debug\eUseControl.csproj.CoreCompileInputs.cache

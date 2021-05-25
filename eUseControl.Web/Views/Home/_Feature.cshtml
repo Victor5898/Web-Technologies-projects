@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<section id="mu-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="mu-features-area">
+                    <!-- Start Title -->
+                    <div class="mu-title">
+                        <h2>Facilitatile noastre</h2>
+                        <p>Cursurile I++ ofera o gama larga de facilitati, care ne deosebesc de alte proiecte din acest domeniu</p>
+                    </div>
+                    <!-- End Title -->
+                    <!-- Start features content -->
+                    <div class="mu-features-content">
+                        <div class="row">
+                            @{
+
+                                var fObj = Model.FacilitiesObj;
+                                foreach (var fo in fObj)
+                                {
+                                    <div class="col-lg-4 col-md-4  col-sm-6">
+                                        <div class="mu-single-feature">
+                                            <span class="fa fa-book"></span>
+                                            <h4>@fo.Facilities_name</h4>
+                                            <p>@fo.Facilities_descript</p>
+                                            <a href="#">Citeste mai mult</a>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <!-- End features content -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

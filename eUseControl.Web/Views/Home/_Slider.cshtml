@@ -1,0 +1,24 @@
+﻿<section id="mu-slider">
+    <!-- Start single slider item -->
+    @{
+        var sobj = Model.SlideObj;
+
+        foreach (var s in sobj)
+        {
+            <div class="mu-slider-single">
+                <div class="mu-slider-img">
+                    <figure>
+                        <img src="@s.Slide_img" alt="img">
+                    </figure>
+                </div>
+                <div class="mu-slider-content">
+                    <h4>@s.Slide_name</h4>
+                    <span></span>
+                    <h2>@s.Slide_title</h2>
+                    <p>@s.Slide_descript</p>
+                    <a href="#" class="mu-read-more-btn" role = "button" name = "slider">Citeste mai mult</a>
+                </div>
+            </div>
+        }
+    }
+</section>
